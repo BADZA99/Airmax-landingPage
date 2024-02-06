@@ -41,6 +41,17 @@ position: absolute;
 width: 3.9375rem;
 height: 2.2956rem;
 top: 0rem;
+}
 
+.BigNikeLogo{
+position: absolute;
+/* width: 1646.9px; */
+/* height: 592.72px; */
+top: 1%;
+left: 12.1875rem;
+transform: rotate(10.29deg);
+}
 
+.BigCircleB{
+    
 }

@@ -28,6 +28,7 @@ const StyledUl = styled.ul`
   width: 35%;
   list-style: none;
   margin: 0 auto;
+  z-index:11;
   li {
     color: ${allColors.blanc};
     font-family: "Futura Bold", sans-serif;
@@ -36,11 +37,11 @@ const StyledUl = styled.ul`
     font-weight: bold;
     cursor: pointer;
     transition:0.3s;
+    
     &:hover {
       color: ${allColors.orange};
       // text-decoration:underline;
     }
-
   }
 `;
 

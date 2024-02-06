@@ -14,7 +14,8 @@ const StyledHeadlines = styled.div`
   top: 8.7325rem;
   left: 10.5rem;
   width: 27.5625rem;
-  height: 19.95rem;
+//   height: 19.95rem;
+height:50%;
   //   padding:0;
 
   p {
