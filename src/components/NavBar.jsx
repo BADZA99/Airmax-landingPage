@@ -38,7 +38,7 @@ const StyledUl = styled.ul`
     transition:0.3s;
     &:hover {
       color: ${allColors.orange};
-      text-decoration:underline;
+      // text-decoration:underline;
     }
 
   }

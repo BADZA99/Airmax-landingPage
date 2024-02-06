@@ -11,13 +11,36 @@ cursor:pointer;
 width: 5.5rem;
 height: 1.9794rem;
 top: 1.7619rem;
+cursor:pointer;
 left: 10.5rem;
+}
+
+.searchIcon{
+cursor:pointer;
+
 }
 
 .cartImg{
 width: 2.5rem;
 height: 2.5rem;
 top: 1.75rem;
+cursor:pointer;
 left: 78.625rem;
+
+}
+
+.socialIcon{
+width: 1.5rem;
+height: 1.2188rem;
+transform: rotate(90deg);
+cursor: pointer;
+}
+
+.nikeLogoTxt{
+position: absolute;
+width: 3.9375rem;
+height: 2.2956rem;
+top: 0rem;
+
 
 }
