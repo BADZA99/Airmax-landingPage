@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import styled  from "styled-components";
+import allColors from './utils/allColors';
+import HamburgerMenu from './assets/Hamburger.png'
+import NavBar from './components/NavBar';
+
+const StyledHome = styled.div`
+width: 100vw;
+height: 100vh;
+position:relative;
+background:${allColors.bgColor};
+`;
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledHome className="Home">
+        <img src={HamburgerMenu} alt="HamburgerMenu"  className='hambMenu'/>
+        <NavBar/>
+    </StyledHome>
   );
 }
 
