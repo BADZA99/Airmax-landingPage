@@ -5,6 +5,8 @@ import StarFilled from "../assets/Star 4.png";
 import StarEmpty from "../assets/Star 5.png";
 import ArrowLeft from "../assets/Arrow---Right-2.png";
 import ArrowRightFilled from "../assets/Arrow---Right-red.png";
+import {gsap} from "gsap";
+import { useEffect } from "react";
 
 const StyledInfos = styled.div`
 //   border: 1px solid red;
@@ -81,8 +83,16 @@ button {
 `;
 
 const DetailsShoes = () => {
+  useEffect(()=>{
+    gsap.from(".infos", {duration: 1, x: 100, opacity: 0, ease: "bounce"});
+    gsap.to(".infos", { duration: 2,
+      x: 0, 
+      opacity: 1, 
+      scale: 1, 
+      ease: "elastic", });
+  })
   return (
-    <StyledInfos>
+    <StyledInfos className="infos">
       <p>NIKE AIR MAX 270</p>
       <div className="ratePrice">
         <span>

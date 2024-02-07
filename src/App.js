@@ -1,5 +1,5 @@
 import './App.css';
-import styled  from "styled-components";
+import styled from "styled-components";
 import allColors from './utils/allColors';
 import HamburgerMenu from './assets/Hamburger.png'
 import NavBar from './components/NavBar';
@@ -14,7 +14,9 @@ import elliperedBlack from "./assets/elipse red black.png";
 import ellipseredWhite from "./assets/elipse red white.png";
 import ellipsewhiteBlack from "./assets/elipse white black.png";
 import DetailsShoes from './components/DetailsShoes';
-import { Animate, AnimateKeyframes, AnimateGroup } from "react-simple-animate";
+// import { Animate, AnimateKeyframes, AnimateGroup } from "react-simple-animate";
+import { useEffect } from 'react';
+import { gsap } from "gsap";
 
 
 
@@ -62,8 +64,8 @@ const StyledHome = styled.div`
   .circles {
     width: 35.1788rem;
     height: 35.4469rem;
-    top: 4.9906rem;
-    left: 45.5rem;
+    top: 10%;
+    right: 9%;
     position: absolute;
     // retourner a 180deg
     transform: rotate(180deg);
@@ -85,46 +87,62 @@ const StyledHome = styled.div`
   }
 
   .minicircles {
-    position:absolute;
+    position: absolute;
     width: 7.9981rem;
     height: 2.8775rem;
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     // retourne en 180deg
     transform: rotate(90deg);
-    top:52%;
+    top: 48%;
     right: 5.1%;
     // cibler le premier enfant
     img:first-child {
       img {
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit:cover;
-      margin-bottom:0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin-bottom: 0;
+      }
     }
-    }
-    .blackEll{
+    .blackEll {
       // rotate un peu
       transform: rotate(93deg);
     }
 
-    .redEll{
+    .redEll {
       transform: rotate(93deg);
     }
 
-    .whiteEll{
+    .whiteEll {
       transform: rotate(93deg);
     }
-
   }
 `;
 
 
 
+
+
 function App() {
+  useEffect(() => {
+    gsap.from(".bigNike", { duration: 2, x: 300, opacity: 0, scale: 0.5 });
+    gsap.from(".bigChoes", { duration: 2, x: -300, opacity: 0, scale: 0.5 });
+    gsap.from(".circles", { duration: 2, x: 300, opacity: 0, scale: 0.5 });
+    // gsap.from(".minicircles", { duration: 2, x: -300, opacity: 0, scale: 0.5 });
+    // to
+    gsap.to(".bigNike", { duration: 2, x: 0, opacity: 1, scale: 1 });
+    gsap.to(".bigChoes", { duration: 2, x: 0, opacity: 1, scale: 1 });
+    gsap.to(".circles", { duration: 2, x: 0, opacity: 1, scale: 1 });
+    // gsap.to(".minicircles", { duration: 2, x: 0, opacity: 1, scale: 1 });
+
+  }, []);
+
+
+
   return (
     <StyledHome className="Home">
       <img src={HamburgerMenu} alt="HamburgerMenu" className="hambMenu" />
@@ -135,23 +153,9 @@ function App() {
       <div className="bigNike">
         <img src={BigNikeLogo} alt="big nike logo" />
       </div>
-      <Animate
-        play
-        start={{
-          opacity: 0,
-      // transform: "translateX(100%)",
-       transform: "rotate(-24deg)"
-        }}
-        end={{
-          opacity: 1,
-          transform: "translateX(-100%)", // End at the original position
-        }}
-        duration={2.0} // Duration of the animation in seconds
-      >
-      </Animate>
-        <div className="bigChoes">
-          <img src={BigChoes} alt="big nike choes" />
-        </div>
+      <div className="bigChoes">
+        <img src={BigChoes} alt="big nike choes" />
+      </div>
       <div className="circles">
         <img src={BigCircleB} alt="BigCircleB" className="BigCircleB" />
         <img src={BigCircleW} alt="BigCirclew" className="BigCirclew" />

@@ -4,6 +4,9 @@ import allColors from "../utils/allColors";
 import NikeLogo from '../assets/Nike logo.png';
 import Cart from '../assets/Cart.png';
 import Search from '../assets/Search.png';
+// gsap
+import { gsap } from "gsap";
+import { useEffect } from 'react';
 
 const Nav = styled.nav`
 position: absolute;
@@ -55,8 +58,27 @@ const IconeBlock = styled.div`
 
 
 const NavBar = () => {
+  // animation la navbar apparait de haut en bas
+  useEffect(()=>{
+
+    gsap.from(".navbar", {
+      y: -100,
+      duration: 2,
+      ease: "power4.out",
+    });
+  
+    // l'arrivee gsap.to
+    gsap.to(".navbar", {
+      y: 0,
+      duration: 2,
+      ease: "power4.out",
+    });
+  })
+
+
+
   return (
-    <Nav>
+    <Nav className='navbar'>
       <img src={NikeLogo} alt="logo nike" className="nikeLogo" />
       <StyledUl>
         <li>MEN</li>

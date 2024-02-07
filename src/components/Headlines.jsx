@@ -4,6 +4,7 @@ import allColors from "../utils/allColors";
 import Nike from '../assets/Nike Logotext.png';
 // import  gsap
  import { gsap } from "gsap";
+import { useEffect } from 'react';
 
 const StyledHeadlines = styled.div`
 //  border: 0.0625rem solid white;
@@ -83,8 +84,15 @@ const H2 = styled.h2`
 
 
 const Headlines = () => {
+  useEffect(()=>{
+    // anime gsap container
+    gsap.from(".container", { duration: 2, x: -300, opacity: 0, scale: 0.5 });
+    // gsap to
+    gsap.to(".container", { duration:
+    2, x: 0, opacity: 1, scale: 1 });
+  }, []);
   return (
-    <StyledHeadlines>
+    <StyledHeadlines className='container'>
       <img src={Nike} alt="nike logo" className="nikeLogoTxt" />
       <H1>BORING</H1>
       <H2>shoes?</H2>
