@@ -2,15 +2,18 @@ import React from 'react';
 import styled from "styled-components";
 import allColors from "../utils/allColors";
 import Nike from '../assets/Nike Logotext.png';
+// import  gsap
+ import { gsap } from "gsap";
 
 const StyledHeadlines = styled.div`
-//   border: 0.0625rem solid white;
+//  border: 0.0625rem solid white;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  //   text-align: justify;
+  align-content:left;
+  text-align: justify;
   top: 8.7325rem;
   left: 10.5rem;
   width: 27.5625rem;

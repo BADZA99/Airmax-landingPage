@@ -10,6 +10,11 @@ import BigNikeLogo from './assets/big nike logo.png';
 import BigChoes from "./assets/BigChoes.png";
 import BigCircleW from "./assets/big Ellipse white.png";
 import BigCircleB from "./assets/big Ellipse noir.png";
+import elliperedBlack from "./assets/elipse red black.png";
+import ellipseredWhite from "./assets/elipse red white.png";
+import ellipsewhiteBlack from "./assets/elipse white black.png";
+import DetailsShoes from './components/DetailsShoes';
+import { Animate, AnimateKeyframes, AnimateGroup } from "react-simple-animate";
 
 
 
@@ -78,6 +83,43 @@ const StyledHome = styled.div`
       height: 100%;
     }
   }
+
+  .minicircles {
+    position:absolute;
+    width: 7.9981rem;
+    height: 2.8775rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    // retourne en 180deg
+    transform: rotate(90deg);
+    top:52%;
+    right: 5.1%;
+    // cibler le premier enfant
+    img:first-child {
+      img {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit:cover;
+      margin-bottom:0;
+    }
+    }
+    .blackEll{
+      // rotate un peu
+      transform: rotate(93deg);
+    }
+
+    .redEll{
+      transform: rotate(93deg);
+    }
+
+    .whiteEll{
+      transform: rotate(93deg);
+    }
+
+  }
 `;
 
 
@@ -93,13 +135,37 @@ function App() {
       <div className="bigNike">
         <img src={BigNikeLogo} alt="big nike logo" />
       </div>
-      <div className="bigChoes">
-        <img src={BigChoes} alt="big nike choes" />
-      </div>
+      <Animate
+        play
+        start={{
+          opacity: 0,
+      // transform: "translateX(100%)",
+       transform: "rotate(-24deg)"
+        }}
+        end={{
+          opacity: 1,
+          transform: "translateX(-100%)", // End at the original position
+        }}
+        duration={2.0} // Duration of the animation in seconds
+      >
+      </Animate>
+        <div className="bigChoes">
+          <img src={BigChoes} alt="big nike choes" />
+        </div>
       <div className="circles">
         <img src={BigCircleB} alt="BigCircleB" className="BigCircleB" />
         <img src={BigCircleW} alt="BigCirclew" className="BigCirclew" />
       </div>
+      <div className="minicircles">
+        <img
+          src={ellipsewhiteBlack}
+          alt="elipse white black"
+          className="blackEll"
+        />
+        <img src={elliperedBlack} alt="elliperedBlack" className="redEll" />
+        <img src={ellipseredWhite} alt="ellipseredWhite" className="whiteEll" />
+      </div>
+      <DetailsShoes />
     </StyledHome>
   );
 }
