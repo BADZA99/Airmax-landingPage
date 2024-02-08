@@ -8,7 +8,7 @@ const allColors = {
   bleuSombre: "#1A2229",
   gris: "#565656",
   lightGris: "#979797",
-  rose: "#A1034A80",
+  rose: "#a1034a80",
   bleuFonce: "#1B4F87",
   vertClair: "#9ED065",
   bleuClair: "#2D5F84",

@@ -17,6 +17,8 @@ import DetailsShoes from './components/DetailsShoes';
 // import { Animate, AnimateKeyframes, AnimateGroup } from "react-simple-animate";
 import { useEffect } from 'react';
 import { gsap } from "gsap";
+import { useState } from 'react';
+import Catalogue from './components/Catalogue';
 
 
 
@@ -52,12 +54,20 @@ const StyledHome = styled.div`
     z-index: 10;
     // border: 0.0625rem solid white;
     // transform: rotateY(180deg);
+    // pointer-events: none;
 
-    img {
+    .img {
       width: 70%;
       // retourner dans l'autre sens et le faire pivoter vers le bas
       transform: rotate(-24deg);
       object-fit: cover;
+    }
+    .svg{
+      width: 95%;
+      // remonter un peu 
+      transform: translateY(-12%);
+      object-fit: cover;
+
     }
   }
 
@@ -128,18 +138,21 @@ const StyledHome = styled.div`
 
 
 function App() {
+  const [defaultImg, setDefaultImg] = useState(BigChoes);
+  // console.log(defaultImg);
   useEffect(() => {
-    gsap.from(".bigNike", { duration: 2, x: 300, opacity: 0, scale: 0.5 });
-    gsap.from(".bigChoes", { duration: 2, x: -300, opacity: 0, scale: 0.5 });
-    gsap.from(".circles", { duration: 2, x: 300, opacity: 0, scale: 0.5 });
-    // gsap.from(".minicircles", { duration: 2, x: -300, opacity: 0, scale: 0.5 });
+    gsap.from(".bigNike", { duration: 1, x: 300, opacity: 0, scale: 0.5 });
+    gsap.from(".bigChoes", { duration: 1, x: -300, opacity: 0, scale: 0.5 });
+    gsap.from(".svg", { duration: 1, x: -300, opacity: 0, scale: 0.5 });
+    gsap.from(".circles", { duration: 1, x: 300, opacity: 0, scale: 0.5 });
+    // gsap.from(".minicircles", { duration: 1, x: -300, opacity: 0, scale: 0.5 });
     // to
-    gsap.to(".bigNike", { duration: 2, x: 0, opacity: 1, scale: 1 });
-    gsap.to(".bigChoes", { duration: 2, x: 0, opacity: 1, scale: 1 });
-    gsap.to(".circles", { duration: 2, x: 0, opacity: 1, scale: 1 });
+    gsap.to(".bigNike", { duration: 1, x: 0, opacity: 1, scale: 1 });
+    gsap.to(".svg", { duration: 1, x: 0, opacity: 1, scale: 1 });
+    gsap.to(".bigChoes", { duration: 1, x: 0, opacity: 1, scale: 1 });
+    gsap.to(".circles", { duration: 1, x: 0, opacity: 1, scale: 1 });
     // gsap.to(".minicircles", { duration: 2, x: 0, opacity: 1, scale: 1 });
-
-  }, []);
+  }, [defaultImg]);
 
 
 
@@ -154,7 +167,21 @@ function App() {
         <img src={BigNikeLogo} alt="big nike logo" />
       </div>
       <div className="bigChoes">
-        <img src={BigChoes} alt="big nike choes" />
+        <img
+          src={defaultImg}
+          alt="big nike choes"
+          className={
+
+            defaultImg != BigChoes ? "svg" : "img"
+          }
+
+          style={{
+            // si defaultImg est different de BigChoes alors on retourne l'image sinon on fait rien
+            transform: `${
+              defaultImg === BigChoes ? "rotate(-24deg)" : ""
+            }`,
+          }}
+        />
       </div>
       <div className="circles">
         <img src={BigCircleB} alt="BigCircleB" className="BigCircleB" />
@@ -169,7 +196,8 @@ function App() {
         <img src={elliperedBlack} alt="elliperedBlack" className="redEll" />
         <img src={ellipseredWhite} alt="ellipseredWhite" className="whiteEll" />
       </div>
-      <DetailsShoes />
+      <DetailsShoes imgShoe={defaultImg} setDefaultImg={setDefaultImg} />
+      <Catalogue imgShoe={defaultImg} setDefaultImg={setDefaultImg} />
     </StyledHome>
   );
 }

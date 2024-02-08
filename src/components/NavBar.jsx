@@ -24,14 +24,14 @@ border-radius:10px;
 `;
 
 const StyledUl = styled.ul`
-//   border: 0.0625rem solid white;
+  // border: 0.0625rem solid white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 35%;
   list-style: none;
   margin: 0 auto;
-  z-index:11;
+  z-index: 11;
   li {
     color: ${allColors.blanc};
     font-family: "Futura Bold", sans-serif;
@@ -39,8 +39,9 @@ const StyledUl = styled.ul`
     line-height: 1.465rem;
     font-weight: bold;
     cursor: pointer;
-    transition:0.3s;
-    
+
+    transition: 0.3s;
+
     &:hover {
       color: ${allColors.orange};
       // text-decoration:underline;
@@ -73,7 +74,7 @@ const NavBar = () => {
       duration: 2,
       ease: "power4.out",
     });
-  })
+  },[])
 
 
 

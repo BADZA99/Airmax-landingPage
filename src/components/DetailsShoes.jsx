@@ -5,11 +5,13 @@ import StarFilled from "../assets/Star 4.png";
 import StarEmpty from "../assets/Star 5.png";
 import ArrowLeft from "../assets/Arrow---Right-2.png";
 import ArrowRightFilled from "../assets/Arrow---Right-red.png";
-import {gsap} from "gsap";
+// import {gsap} from "gsap";
 import { useEffect } from "react";
+import Allshoes from "../utils/allProducts";
+import { useState } from "react";
 
 const StyledInfos = styled.div`
-//   border: 1px solid red;
+  // border: 1px solid red;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -19,6 +21,7 @@ const StyledInfos = styled.div`
   height: 5.7231rem;
   top: 69%;
   right: 17%;
+  z-inndex: 12;
 
   p {
     color: ${allColors.blanc};
@@ -49,66 +52,101 @@ const StyledInfos = styled.div`
         margin: 0;
       }
     }
-}
-button {
-  width: 7.25rem;
-  height: 2.1875rem;
-  background: transparent;
-  color: ${allColors.orange};
- border: 1px solid ${allColors.orange};
-  font-family: "Futura Bold", sans-serif;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  line-height: 0.8125rem;
-  letter-spacing: 0em;
-  text-align: left;
-  letter-spacing: 0em;
-  text-align: center;
-  border-radius: 0.3125rem;
-}
-
+  }
+  button {
+    width: 7.25rem;
+    height: 2.1875rem;
+    background: transparent;
+    color: ${allColors.orange};
+    border: 1px solid ${allColors.orange};
+    font-family: "Futura Bold", sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    line-height: 0.8125rem;
+    letter-spacing: 0em;
+    text-align: left;
+    letter-spacing: 0em;
+    text-align: center;
+    border-radius: 0.3125rem;
+  }
 
   .arrows {
     position: absolute;
+    // top:10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 90%;
-    cursor:pointer;
     img {
       width: 1.25rem;
+      cursor: pointer;
       height: 1.25rem;
+      // autoriser le clic
+      pointer-events: all;
     }
   }
 `;
 
-const DetailsShoes = () => {
-  useEffect(()=>{
-    gsap.from(".infos", {duration: 1, x: 100, opacity: 0, ease: "bounce"});
-    gsap.to(".infos", { duration: 2,
-      x: 0, 
-      opacity: 1, 
-      scale: 1, 
-      ease: "elastic", });
-  })
+const DetailsShoes = ({ imgShoe, setDefaultImg }) => {
+  const [Product, setProduct] = useState({});
+  const [Allproducts, setAllProducts] = useState(Allshoes);
+
+  const handleProduct = () => {
+    // parcourir allproducts et verifier si un produit a la meme image que imgShoe si oui on recupere ce produit
+    for (const key in Allproducts) {
+      if (Allproducts[key].img === imgShoe) {
+        setProduct({
+          img: Allproducts[key].img,
+          price: Allproducts[key].price,
+          rate: Allproducts[key].rate,
+          name:Allproducts[key].name,
+        
+        });
+      }
+    }
+// console.log(Product);
+  };
+
+  useEffect(() => {
+    // gsap.from(".infos", { duration: 1, x: 100, opacity: 0, ease: "bounce" });
+    // gsap.to(".infos", {
+    //   duration: 2,
+    //   x: 0,
+    //   opacity: 1,
+    //   scale: 1,
+    //   ease: "bounce",
+    // });
+    handleProduct();
+  }, []);
   return (
     <StyledInfos className="infos">
-      <p>NIKE AIR MAX 270</p>
+      <p>{Product.name}</p>
       <div className="ratePrice">
-        <span>
+        {
+          Product.rate > 4.5 ? <span>
+          <img src={StarFilled} alt="star" />
+          <img src={StarFilled} alt="star" />
+          <img src={StarFilled} alt="star" />
+          <img src={StarFilled} alt="star" />
+          <img src={StarFilled} alt="star" />
+        </span> : <span>
           <img src={StarFilled} alt="star" />
           <img src={StarFilled} alt="star" />
           <img src={StarFilled} alt="star" />
           <img src={StarFilled} alt="star" />
           <img src={StarEmpty} alt="star" />
         </span>
-        <span>$189</span>
+
+        }
+        <span>{
+          Product.price
+          }</span>
       </div>
       <button>Buy Now</button>
 
       <div className="arrows">
         <img src={ArrowLeft} alt="arrow left" />
-        <img src={ArrowRightFilled} alt="arrow right" />
+        <img src={ArrowRightFilled} alt="arrow right" onClick={handleProduct} />
       </div>
     </StyledInfos>
   );

@@ -86,10 +86,10 @@ const H2 = styled.h2`
 const Headlines = () => {
   useEffect(()=>{
     // anime gsap container
-    gsap.from(".container", { duration: 2, x: -300, opacity: 0, scale: 0.5 });
+    gsap.from(".container", { duration: 1, x: -300, opacity: 0, scale: 0.5 });
     // gsap to
     gsap.to(".container", { duration:
-    2, x: 0, opacity: 1, scale: 1 });
+    1, x: 0, opacity: 1, scale: 1 });
   }, []);
   return (
     <StyledHeadlines className='container'>
