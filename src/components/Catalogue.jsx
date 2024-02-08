@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import allColors from "../utils/allColors";
+// import allColors from "../utils/allColors";
 import { gsap } from "gsap";
 import { useEffect } from "react";
 import Allshoes from "../utils/allProducts";
-import { useState } from "react";
-import Shoe1 from "../assets/air-max-90-flyease.png";
+// import { useState } from "react";
+// import Shoe1 from "../assets/air-max-90-flyease.png";
 
 
 const StyledCatalogue = styled.div`

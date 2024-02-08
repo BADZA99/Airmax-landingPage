@@ -90,7 +90,7 @@ const StyledInfos = styled.div`
 const DetailsShoes = ({ imgShoe, setDefaultImg }) => {
   const [Product, setProduct] = useState({});
   const [Allproducts, setAllProducts] = useState(Allshoes);
-
+  
   const handleProduct = () => {
     // parcourir allproducts et verifier si un produit a la meme image que imgShoe si oui on recupere ce produit
     for (const key in Allproducts) {
@@ -99,12 +99,11 @@ const DetailsShoes = ({ imgShoe, setDefaultImg }) => {
           img: Allproducts[key].img,
           price: Allproducts[key].price,
           rate: Allproducts[key].rate,
-          name:Allproducts[key].name,
-        
+          name: Allproducts[key].name,
         });
       }
     }
-// console.log(Product);
+    // console.log(Product);
   };
 
   useEffect(() => {
@@ -117,30 +116,29 @@ const DetailsShoes = ({ imgShoe, setDefaultImg }) => {
     //   ease: "bounce",
     // });
     handleProduct();
-  }, []);
+  }, [imgShoe, handleProduct]);
   return (
     <StyledInfos className="infos">
       <p>{Product.name}</p>
       <div className="ratePrice">
-        {
-          Product.rate > 4.5 ? <span>
-          <img src={StarFilled} alt="star" />
-          <img src={StarFilled} alt="star" />
-          <img src={StarFilled} alt="star" />
-          <img src={StarFilled} alt="star" />
-          <img src={StarFilled} alt="star" />
-        </span> : <span>
-          <img src={StarFilled} alt="star" />
-          <img src={StarFilled} alt="star" />
-          <img src={StarFilled} alt="star" />
-          <img src={StarFilled} alt="star" />
-          <img src={StarEmpty} alt="star" />
-        </span>
-
-        }
-        <span>{
-          Product.price
-          }</span>
+        {Product.rate > 4.5 ? (
+          <span>
+            <img src={StarFilled} alt="star" />
+            <img src={StarFilled} alt="star" />
+            <img src={StarFilled} alt="star" />
+            <img src={StarFilled} alt="star" />
+            <img src={StarFilled} alt="star" />
+          </span>
+        ) : (
+          <span>
+            <img src={StarFilled} alt="star" />
+            <img src={StarFilled} alt="star" />
+            <img src={StarFilled} alt="star" />
+            <img src={StarFilled} alt="star" />
+            <img src={StarEmpty} alt="star" />
+          </span>
+        )}
+        <span>{Product.price}</span>
       </div>
       <button>Buy Now</button>
 
