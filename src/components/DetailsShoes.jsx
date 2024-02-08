@@ -9,6 +9,7 @@ import ArrowRightFilled from "../assets/Arrow---Right-red.png";
 import { useEffect } from "react";
 import Allshoes from "../utils/allProducts";
 import { useState } from "react";
+import { useCallback } from "react";
 
 const StyledInfos = styled.div`
   // border: 1px solid red;
@@ -89,10 +90,27 @@ const StyledInfos = styled.div`
 
 const DetailsShoes = ({ imgShoe, setDefaultImg }) => {
   const [Product, setProduct] = useState({});
-  const [Allproducts, setAllProducts] = useState(Allshoes);
-  
-  const handleProduct = () => {
-    // parcourir allproducts et verifier si un produit a la meme image que imgShoe si oui on recupere ce produit
+  const [Allproducts] = useState(Allshoes);
+
+  // const handleProduct = () => {
+  //   // parcourir allproducts et verifier si un produit a la meme image que imgShoe si oui on recupere ce produit
+  //   for (const key in Allproducts) {
+  //     if (Allproducts[key].img === imgShoe) {
+  //       setProduct({
+  //         img: Allproducts[key].img,
+  //         price: Allproducts[key].price,
+  //         rate: Allproducts[key].rate,
+  //         name: Allproducts[key].name,
+  //       });
+  //     }
+  //   }
+  //   // console.log(Product);
+  // };
+  /*
+La fonction useCallback est un hook fourni par React qui retourne une version mémoïsée de la fonction passée en argument. Cela signifie que la fonction ne sera recréée que si l'une de ses dépendances change.
+ */
+  const handleProduct = useCallback(() => {
+    // Your function logic here...
     for (const key in Allproducts) {
       if (Allproducts[key].img === imgShoe) {
         setProduct({
@@ -103,8 +121,7 @@ const DetailsShoes = ({ imgShoe, setDefaultImg }) => {
         });
       }
     }
-    // console.log(Product);
-  };
+  }, [Allproducts, imgShoe]);
 
   useEffect(() => {
     // gsap.from(".infos", { duration: 1, x: 100, opacity: 0, ease: "bounce" });
