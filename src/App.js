@@ -172,7 +172,7 @@ function App() {
           alt="big nike choes"
           className={
 
-            defaultImg != BigChoes ? "svg" : "img"
+            defaultImg !== BigChoes ? "svg" : "img"
           }
 
           style={{
