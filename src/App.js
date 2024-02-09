@@ -159,13 +159,12 @@ const StyledHome = styled.div`
 
       
     }
-    @media (max-width: 417px) {
+    @media (max-width: 430px) {
       .minicircles {
         display: none;
       }
       .circles {
        display:none;
-
       
     }
   }
