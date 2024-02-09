@@ -159,6 +159,15 @@ const StyledHome = styled.div`
 
       
     }
+    @media (max-width: 417px) {
+      .minicircles {
+        display: none;
+      }
+      .circles {
+       display:none;
+
+      
+    }
   }
 
   // RESPONSIVE
