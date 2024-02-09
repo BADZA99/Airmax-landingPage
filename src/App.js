@@ -150,24 +150,42 @@ const StyledHome = styled.div`
       transform: rotate(93deg);
     }
 
+    }
+
     @media (max-width: 320px) {
       .minicircles {
         display: none;
       }
       .circles {
-       display:none;
+
+        .BigCircleW{
+          display:none;
+        }
+
+        .BigCircleB{
+          dislay:none;
+        }
+
+      }
 
       
     }
-    @media (max-width: 430px) {
+    @media (max-width: 500px) {
       .minicircles {
         display: none;
       }
       .circles {
-       display:none;
-      
-    }
-  }
+
+        .BigCircleW{
+          display:none;
+        }
+
+        .BigCircleB{
+          dislay:none;
+        }
+
+      }
+ 
 
   // RESPONSIVE
   @media (max-width: 768px) {
