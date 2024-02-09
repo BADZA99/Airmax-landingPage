@@ -57,7 +57,7 @@ const Nav = styled.nav`
 
 `;
 const StyledUl = styled.ul`
-  border: 0.0625rem solid white;
+  //border: 0.0625rem solid white;
   display: flex;
   justify-content: space-between;
   align-items: center;
