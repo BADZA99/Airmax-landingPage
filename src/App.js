@@ -46,6 +46,7 @@ const StyledHome = styled.div`
   }
 
   .bigChoes {
+    // border:1px solid red;
     position: absolute;
     bottom: 60%;
     left: 37%;
@@ -56,18 +57,32 @@ const StyledHome = styled.div`
     // transform: rotateY(180deg);
     // pointer-events: none;
 
+    @media (max-width: 320px) {
+      width: 100%;
+      height: 100%;
+      bottom: 55%;
+      left: 24%;
+
+      .img {
+        width: 200%;
+      }
+
+      .svg {
+        width: 100%;
+      }
+    }
+
     .img {
       width: 70%;
       // retourner dans l'autre sens et le faire pivoter vers le bas
       transform: rotate(-24deg);
       object-fit: cover;
     }
-    .svg{
+    .svg {
       width: 95%;
-      // remonter un peu 
+      // remonter un peu
       transform: translateY(-12%);
       object-fit: cover;
-
     }
   }
 
@@ -93,6 +108,10 @@ const StyledHome = styled.div`
       left: 0;
       width: 100%;
       height: 100%;
+    }
+
+    @media (max-width: 320px) {
+      display: none;
     }
   }
 
@@ -129,6 +148,106 @@ const StyledHome = styled.div`
 
     .whiteEll {
       transform: rotate(93deg);
+    }
+
+    @media (max-width: 320px) {
+      .minicircles {
+        display: none;
+      }
+      .circles {
+        // plus petit
+        width: 20rem;
+        height: 20rem;
+        // placer a gauche
+        right: 0;
+        top: 48%;
+
+        .BigCircleW {
+          width: 100%;
+          height: 100%;
+        }
+        .BigCircleB {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  // RESPONSIVE
+  @media (max-width: 768px) {
+    .bigNike {
+      width: 100%;
+      height: 30%;
+    }
+
+    .bigChoes {
+      width: 100%;
+      height: 30%;
+    }
+
+    .circles {
+      display: none;
+    }
+
+    .minicircles {
+      width: 5rem;
+      height: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .bigNike {
+      width: 100%;
+      height: 20%;
+    }
+
+    .bigChoes {
+      top: 20%;
+      left: 0;
+      width: 100%;
+      height: 20%;
+    }
+
+    .circles {
+      display: none;
+    }
+
+    .minicircles {
+      width: 3rem;
+      height: 1rem;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .bigNike {
+      width: 100%;
+      height: 20%;
+    }
+
+    .bigChoes {
+      top: 40%;
+      left: 0;
+      width: 100%;
+      height: 30%;
+
+      .img {
+        width: 80%;
+        height: auto;
+      }
+
+      .svg {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .circles {
+      display: none;
+    }
+
+    .minicircles {
+      display: none;
     }
   }
 `;
@@ -171,7 +290,6 @@ function App() {
           src={defaultImg}
           alt="big nike choes"
           className={
-
             defaultImg !== BigChoes ? "svg" : "img"
           }
 
@@ -183,7 +301,7 @@ function App() {
           }}
         />
       </div>
-      <div className="circles">
+     <div className="circles">
         <img src={BigCircleB} alt="BigCircleB" className="BigCircleB" />
         <img src={BigCircleW} alt="BigCirclew" className="BigCirclew" />
       </div>

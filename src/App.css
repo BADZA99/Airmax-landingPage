@@ -5,6 +5,18 @@ height: 1.875rem;
 top: 3.5625rem;
 left: 2.75rem;
 cursor:pointer;
+
+/* responsive */
+@media (max-width: 768px) {
+    top: 3.5625rem;
+    left: 2.75rem;
+  }
+@media (max-width: 425px) {
+    top: 3.5625rem;
+    left: 2.75rem;
+  }
+
+
 }
 
 .nikeLogo{
@@ -13,10 +25,19 @@ height: 1.9794rem;
 top: 1.7619rem;
 cursor:pointer;
 left: 10.5rem;
+ @media (max-width: 320px) {
+      display: none !important;
+    }
 }
 
 .searchIcon{
 cursor:pointer;
+ @media (max-width: 320px) {
+      display: none !important;
+    }
+      @media (max-width: 584px){
+   display:none;
+  }
 
 }
 
@@ -26,6 +47,29 @@ height: 2.5rem;
 top: 1.75rem;
 cursor:pointer;
 left: 78.625rem;
+
+
+@media (max-width: 768px) {
+    top: 1.75rem;
+    left: 78.625rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+@media (max-width: 425px) {
+    top: 1.75rem;
+    left: 78.625rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  /* mobile */
+    @media (max-width: 320px) {
+      display: none !important;
+    }
+      @media (max-width: 584px){
+   display:none;
+  }
+
+
 
 }
 
@@ -41,6 +85,10 @@ position: absolute;
 width: 3.9375rem;
 height: 2.2956rem;
 top: 0rem;
+
+ @media (max-width: 320px){
+   display:none;
+  }
 }
 
 .BigNikeLogo{
@@ -50,5 +98,27 @@ position: absolute;
 top: 1%;
 left: 12.1875rem;
 transform: rotate(10.29deg);
+
+@media (max-width: 768px) {
+    top: 1%;
+    left: 12.1875rem;
+    transform: rotate(10.29deg);
+  }
+
+@media (max-width: 425px) {
+    top: 1%;
+    left: 12.1875rem;
+    transform: rotate(10.29deg);
+  }
+
+    /* mobile */
+        @media (max-width: 320px) {
+        display: none !important;
+        }
+        @media (max-width: 584px){
+     display:none;
+    }
+
+
 }
 

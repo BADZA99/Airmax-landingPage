@@ -92,20 +92,7 @@ const DetailsShoes = ({ imgShoe, setDefaultImg }) => {
   const [Product, setProduct] = useState({});
   const [Allproducts] = useState(Allshoes);
 
-  // const handleProduct = () => {
-  //   // parcourir allproducts et verifier si un produit a la meme image que imgShoe si oui on recupere ce produit
-  //   for (const key in Allproducts) {
-  //     if (Allproducts[key].img === imgShoe) {
-  //       setProduct({
-  //         img: Allproducts[key].img,
-  //         price: Allproducts[key].price,
-  //         rate: Allproducts[key].rate,
-  //         name: Allproducts[key].name,
-  //       });
-  //     }
-  //   }
-  //   // console.log(Product);
-  // };
+
   /*
 La fonction useCallback est un hook fourni par React qui retourne une version mémoïsée de la fonction passée en argument. Cela signifie que la fonction ne sera recréée que si l'une de ses dépendances change.
  */

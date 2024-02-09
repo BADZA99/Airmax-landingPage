@@ -5,7 +5,7 @@ import instagram from '../assets/insta.png';
 import twitter from '../assets/twitter logo.png';
 
 const Styledbloc = styled.div`
-//   border: 0.0625rem solid white;
+  //   border: 0.0625rem solid white;
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -16,6 +16,13 @@ const Styledbloc = styled.div`
   top: 85%;
   padding: 0.5rem;
   width: 5rem;
+
+  @media (max-width: 320px) {
+    // placer plus bas 
+    top: 92%;
+
+
+  }
 `;
 const Socials = () => {
   return (

@@ -65,6 +65,10 @@ const StyledSideMenu = styled.ul`
   li:hover {
     color: ${allColors.orange};
   }
+
+  @media (max-width: 320px) {
+   display:none;
+  }
 `;
 const SideMenu = () => {
   return (

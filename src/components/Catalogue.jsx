@@ -9,7 +9,7 @@ import Allshoes from "../utils/allProducts";
 
 
 const StyledCatalogue = styled.div`
-//   border: 1px solid red;
+  // border: 1px solid red;
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -19,7 +19,7 @@ const StyledCatalogue = styled.div`
   height: 8.7231rem;
   top: 79%;
   left: 11%;
-  z-inndex: 12;
+  z-index: 12;
 
   .box {
     // border: 1px solid red;
@@ -31,10 +31,38 @@ const StyledCatalogue = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: row;
-     img {
+    img {
       width: 100%;
       height: 100%;
       cursor: pointer;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    width: 80%;
+    left: 10%;
+    .box {
+      width: 7rem;
+      height: 7rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    left: 5%;
+    .box {
+      width: 5.5rem;
+      height: 5.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 95%;
+    left: 2.5%;
+    flex-direction: row;
+    .box {
+      width: 4rem;
+      height: 4rem;
     }
   }
 `;

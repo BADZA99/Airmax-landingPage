@@ -9,28 +9,61 @@ import { gsap } from "gsap";
 import { useEffect } from 'react';
 
 const Nav = styled.nav`
-position: absolute;
-width: 70.625rem;
-height: 2.5rem;
-top: 1.75rem;
-left: 10.5rem;
-border-radius: 0.625rem;
-background-color: transparent;
-// border:0.0625rem solid white;
-display:flex;
-justify-content: space-between;
-align-items: center;
-border-radius:10px;
-`;
-
-const StyledUl = styled.ul`
+  position: absolute;
+  margin: 0 auto;
+  width: 70.625rem;
+  height: 2.5rem;
+  top: 1.75rem;
+  left: 10.5rem;
+  right: 10.5rem;
+  border-radius: 0.625rem;
+  background-color: transparent;
   // border: 0.0625rem solid white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+
+  @media (max-width: 1300px) {
+    width: 70%;
+    margin: 0 auto;
+    left: 10%;
+    right: 10%;
+  }
+
+  @media (max-width: 1024px) {
+    width: 60%;
+    left: 5%;
+  }
+
+  @media (max-width: 768px) {
+    width: 80%;
+    left: 15%;
+    right: 15%;
+  }
+
+  @media (max-width: 480px) {
+    width: 70%;
+    // left: 1%;
+    right: 1%;
+  }
+
+  @media (max-width: 320px) {
+    width: 50%;
+    // left: 10%;
+    // right: 10%;
+    justify-content:flex-end;
+  }
+
+`;
+const StyledUl = styled.ul`
+  border: 0.0625rem solid white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 35%;
   list-style: none;
-  margin: 0 auto;
+  // margin: 0 auto;
   z-index: 11;
   li {
     color: ${allColors.blanc};
@@ -47,13 +80,65 @@ const StyledUl = styled.ul`
       // text-decoration:underline;
     }
   }
+
+  @media (max-width: 1300px) {
+    width: 50%;
+    li {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 50%;
+    li {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 50%;
+    li {
+      font-size: 0.7rem;
+    }
+
+    @media (max-width: 584px) {
+    display:none;
+    }
+
+    @media (max-width: 320px) {
+      width: 100%;
+      margin: 0 auto;
+      li {
+        font-size: 0.6rem;
+      }
+    }
+  }
 `;
 
 const IconeBlock = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
- width: 7%;
+   width: 7%;
+
+  // responsive
+  @media (max-width: 1300px) {
+    width: 15%;
+  }
+  @media (max-width: 768px){
+    width: 20%;
+  }
+  @media (max-width: 480px){
+    width: 20%;
+  }
+  @media (max-width: 320px){
+   display:none;
+  }
+  @media (max-width: 584px){
+   display:none;
+
+  }
+
 `;
 
 

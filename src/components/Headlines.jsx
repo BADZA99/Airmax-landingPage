@@ -7,19 +7,19 @@ import Nike from '../assets/Nike Logotext.png';
 import { useEffect } from 'react';
 
 const StyledHeadlines = styled.div`
-//  border: 0.0625rem solid white;
+  //  border: 0.0625rem solid white;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  align-content:left;
+  align-content: left;
   text-align: justify;
   top: 8.7325rem;
   left: 10.5rem;
   width: 27.5625rem;
-//   height: 19.95rem;
-height:50%;
+  //   height: 19.95rem;
+  height: 50%;
   //   padding:0;
 
   p {
@@ -55,6 +55,34 @@ height:50%;
     line-height: 0.9375rem;
     letter-spacing: 0em;
     text-align: center;
+    outline:none;
+    border:none;
+    cursor: pointer;
+  }
+
+  @media (max-width: 320px) {
+    width: 80%;
+    left: 1%;
+    top: 0.7325rem;
+    p {
+      font-size: 0.6rem;
+      line-height: 1.2rem;
+    }
+    button {
+      width: 8.6125rem;
+      height: 2.3638rem;
+      top: 78%;
+      left: 0;
+      border-radius: 0.5031rem;
+      background-color: ${allColors.orange};
+      color: ${allColors.blanc};
+      font-family: "Futura Bold", sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      line-height: 0.9375rem;
+      letter-spacing: 0em;
+      text-align: center;
+    }
   }
 `;
 
@@ -66,6 +94,12 @@ const H1 = styled.h1`
   line-height: 7.375rem;
   letter-spacing: 0em;
   text-align: left;
+
+  @media (max-width: 320px) {
+    font-size: 4.4375rem;
+    line-height: 5.375rem;
+  }
+
 `;
 
 const H2 = styled.h2`
@@ -77,6 +111,12 @@ const H2 = styled.h2`
   letter-spacing: 0em;
   text-align: left;
   text-transform: uppercase;
+
+  @media (max-width: 320px) {
+    font-size: 3.75rem;
+    line-height: 4.6875rem;
+  
+  }
 `;
 
 
