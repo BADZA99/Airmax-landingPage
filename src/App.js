@@ -155,22 +155,9 @@ const StyledHome = styled.div`
         display: none;
       }
       .circles {
-        // plus petit
-        width: 20rem;
-        height: 20rem;
-        // placer a gauche
-        right: 0;
-        top: 48%;
+       display:none;
 
-        .BigCircleW {
-          width: 100%;
-          height: 100%;
-        }
-        .BigCircleB {
-          width: 100%;
-          height: 100%;
-        }
-      }
+      
     }
   }
 
